@@ -32,7 +32,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <malloc.h>     /* for _expand() */
+#if !defined(__OpenBSD__)
+    #include <malloc.h>     /* for _expand() */
+#endif
 #ifdef TRMEM
     #include "trmem.h"
 #endif
